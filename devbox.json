@@ -1,0 +1,22 @@
+{
+  "$schema":  "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
+  "packages": [
+    "go@1.25.2"
+  ],
+  "shell": {
+    "init_hook": [
+      "echo 'Welcome to devbox!' > /dev/null",
+      "unset GOROOT GOTOOLDIR GOROOT_FINAL",
+      "go clean -cache -modcache -testcache -fuzzcache",
+      "rm -rf ~/.cache/go-build",
+      "go version",
+      "go version go1.25.2 linux/amd64",
+      "go env GOROOT"
+    ],
+    "scripts": {
+      "test": [
+        "echo \"Error: no test specified\" && exit 1"
+      ]
+    }
+  }
+}
